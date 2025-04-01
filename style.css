@@ -1,0 +1,199 @@
+/* Estilos globais */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    /* Degradê acinzentado: de um cinza médio a um cinza claro */
+    background: linear-gradient(135deg, #545454, #dcdcdc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centralizar o formulário */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Upload, criação de grupo e form-box */
+.upload-form, 
+.create-group-form, 
+.form-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Campos de entrada e formulários */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff6f00;
+    box-shadow: 0px 0px 8px rgba(255, 111, 0, 0.3);
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+/* Botões */
+.btn-primary, 
+.btn-criar-grupo {
+    background: linear-gradient(135deg, #d84315, #ff6f00);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    min-width: 120px;
+}
+
+.btn-primary:hover, 
+.btn-criar-grupo:hover {
+    background: linear-gradient(135deg, #bf360c, #ff8f00);
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .chat-container, .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Modal Customizações */
+/* Remove sombra do backdrop e do conteúdo do modal */
+.modal-backdrop {
+    background-color: transparent !important;
+}
+
+.modal-content {
+    box-shadow: none !important;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    max-width: 500px;
+    /* Se desejar uma sombra leve, descomente a linha abaixo */
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+/* Ajusta o z-index do modal */
+.modal {
+    z-index: 1051 !important;
+}
+
+/* Centraliza o modal */
+.modal-dialog {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+/* Animação fade-in */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Notificação */
+.notification {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.notification.visible {
+    opacity: 1;
+}
+
+/* Outros ajustes */
+#container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+canvas {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Caso o body esteja limitando o overflow (para animações ou elementos absolutos) */
+body {
+    overflow: auto;
+}
+
+/* Remove a sombra do backdrop quando ele estiver visível */
+.modal-backdrop.show {
+    opacity: 0 !important;
+}
+
+/* Remove a sombra do conteúdo do modal */
+.modal-content {
+    box-shadow: none !important;
+}
